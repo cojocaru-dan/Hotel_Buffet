@@ -15,3 +15,7 @@ public class Portion
         Amount = amount;
     }
 }
+
+public record DinnerBuffet(List<MenuServing> Servings);
+
+public record MenuServing(MenuItem Name, List<Ingredient> Ingredients);

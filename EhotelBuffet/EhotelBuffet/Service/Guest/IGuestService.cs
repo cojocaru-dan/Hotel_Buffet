@@ -17,8 +17,9 @@ public class GuestService : IGuestService
         string randomName = GetRandomName();
         GuestType randomGuestType = GetRandomGuestType();
         (DateTime CheckIn, DateTime CheckOut) = GetRandomDate(seasonStart, seasonEnd);
-
+        
         return new Guest(randomName, randomGuestType, CheckIn, CheckOut);
+
     }
     public HashSet<Guest> GetGuestsForDay(List<Guest> guests, DateTime date)
     {
@@ -48,7 +49,7 @@ public class GuestService : IGuestService
     public GuestType GetRandomGuestType()
     {
         var guestTypesArray = Enum.GetValues(typeof(GuestType));
-        GuestType randomGuestType = (GuestType) guestTypesArray.GetValue(rand.Next(guestTypesArray.Length));
+        GuestType randomGuestType = (GuestType)guestTypesArray.GetValue(rand.Next(guestTypesArray.Length));
         return randomGuestType;
     }
 
